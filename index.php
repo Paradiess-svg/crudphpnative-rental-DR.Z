@@ -115,7 +115,7 @@ $no = 0;
                             <td><?php echo $result['alamat_pool']; ?></td>
                             <td>
                                 <a href="kelola.php?ubah=<?php echo $result['id_mobil']; ?>" type="button" class="btn btn-success btn-sm"><i class="fa fa-pencil"></i></a>
-                                <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal<?= $result['id']?>"><i class="fa fa-trash"></i></button>
+                                <button type="button" class="btn btn-danger btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal<?= $result['id_mobil']?>"><i class="fa fa-trash"></i></button>
 
                             <!-- Modal -->
                             <div class="modal fade" id="exampleModal<?= $result['id_mobil']?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
