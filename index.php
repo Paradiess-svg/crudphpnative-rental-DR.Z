@@ -113,8 +113,30 @@ $no = 0;
                             </td>
                             <?php endif ?>
                             <td><?php echo $result['alamat_pool']; ?></td>
-                            <td><a href="kelola.php?ubah=<?php echo $result['id_mobil']; ?>" type="button" class="btn btn-success btn-sm mt-2"><i class="fa fa-pencil"></i></a>
-                                <a href="proses.php?hapus=<?php echo $result['id_mobil']; ?>" type="button" class="btn btn-danger btn-sm mt-2" onclick="return confirm('Apakah anda yakin ingin menghapus data tersebut???')"><i class="fa fa-trash"></i></a>
+                            <td>
+                                <a href="kelola.php?ubah=<?php echo $result['id_mobil']; ?>" type="button" class="btn btn-success btn-sm"><i class="fa fa-pencil"></i></a>
+                                <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal<?= $result['id']?>"><i class="fa fa-trash"></i></button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal<?= $result['id_mobil']?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title text-danger fw-bold" id="exampleModalLabel">Konfirmasi</h5>
+                                            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h4 class="text-warning"><b>Perhatian! data yang terhapus tak dapat di pulihkan</b></h4>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <a href="proses.php?hapus=<?php echo $result['id_mobil']; ?>" type="button" class="btn btn-danger">Delete</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             </td>
                         </tr>
                     <?php
